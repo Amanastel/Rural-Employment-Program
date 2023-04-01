@@ -2,6 +2,9 @@ package com.mnrega.ui;
 
 import java.util.Scanner;
 
+import static com.mnrega.ui.BDOMainUi.CreateProjectUI;
+import static com.mnrega.ui.BDOMainUi.showAllProject;
+
 public class UIMain {
     static void displayBDOMenu() {
         System.out.println("0. Log out ");
@@ -23,10 +26,10 @@ public class UIMain {
                     System.out.println("Bye Bye admin");
                     break;
                 case 1:
-//                    CreateProjectUI(sc);
+                    CreateProjectUI(sc);
                     break;
                 case 2:
-//                    ProductUI.viewProductsByCategoryId(sc);
+                    showAllProject();
                     break;
                 case 3:
                     //productUI.addProduct();
@@ -61,15 +64,15 @@ public class UIMain {
             System.out.println("Invalid Username and Password");
         }
     }
-    static void displayUserMenu() {
-        System.out.println("1. View All Products");
-        System.out.println("2. Purchase a Product");
-        System.out.println("3. View Order History");
-        System.out.println("4. Update My Name");
-        System.out.println("5. Update My Password");
-        System.out.println("6. Delete My Account");
-        System.out.println("0. Logout");
-    }
+//    static void displayUserMenu() {
+//        System.out.println("1. View All Products");
+//        System.out.println("2. Purchase a Product");
+//        System.out.println("3. View Order History");
+//        System.out.println("4. Update My Name");
+//        System.out.println("5. Update My Password");
+//        System.out.println("6. Delete My Account");
+//        System.out.println("0. Logout");
+//    }
 
 
 

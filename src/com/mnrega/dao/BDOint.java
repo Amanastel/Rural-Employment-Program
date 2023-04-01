@@ -4,12 +4,14 @@ import com.mnrega.dto.Project;
 import com.mnrega.excetion.NoRecordFoundException;
 import com.mnrega.excetion.SomethingWentWrongException;
 
+import java.util.List;
+
 public interface BDOint {
     public boolean login(String username, String password);
 
     public String createProject(Project pro) throws SomethingWentWrongException, NoRecordFoundException;
 
-//    public List<Project> showAllProject () throws ProjectException;
+    public List<Project> showAllProject () throws SomethingWentWrongException, NoRecordFoundException;
 
 //    public String createGPM (GPM gpm) throws GPMException;
 
