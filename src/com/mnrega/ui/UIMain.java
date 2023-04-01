@@ -4,13 +4,12 @@ import java.util.Scanner;
 
 public class UIMain {
     static void displayBDOMenu() {
-        System.out.println("0. Log out Admin");
-        System.out.println("1. Add new Category");
-        System.out.println("2. View all products for a Category");
-        System.out.println("3. Add new Product");
-        System.out.println("4. View All Products");
-        System.out.println("5. View all Users");
-        System.out.println("6. View all Orders");
+        System.out.println("0. Log out ");
+        System.out.println("1. Create Project ");
+        System.out.println("2. View List of Project ");
+        System.out.println("3. Create GPM ");
+        System.out.println("4. Allocate Project to GPM ");
+        System.out.println("5. View all worker ");
     }
 
     static void BDOMenu(Scanner sc) {
@@ -24,7 +23,7 @@ public class UIMain {
                     System.out.println("Bye Bye admin");
                     break;
                 case 1:
-//                    CategoryUI.addCategoryUI(sc);
+//                    CreateProjectUI(sc);
                     break;
                 case 2:
 //                    ProductUI.viewProductsByCategoryId(sc);
