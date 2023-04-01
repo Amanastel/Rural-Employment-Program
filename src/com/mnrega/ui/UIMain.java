@@ -39,7 +39,7 @@ public class UIMain {
 //					SELECT U.username, P.pro_name
 //					FROM orders O INNER JOIN product P ON
 //					O.product_id = P.id INNER JOIN user U ON
-//
+//                  U.id = O.user_id;
 //					Create an object of OrderDTO
 //					new OrderDTO(new ProductDTO(null, pro_name, null, null), new UserDTO(null, username, null));
                     break;
