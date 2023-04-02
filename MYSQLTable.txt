@@ -100,8 +100,7 @@ workers
 +-------------+-------------+------+-----+---------+-------------------+
 
 
-insert into workers (wName,WAadhar,wDob,Wender,gpName,workStrDate,district,state) VALUES
-    ('w1', '128378982121', '2000-11-11', 'male', 1, 'gp1', '2008-11-11', 'hp', 'up');
+
 
 
 

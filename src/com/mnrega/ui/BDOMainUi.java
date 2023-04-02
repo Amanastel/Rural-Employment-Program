@@ -17,16 +17,16 @@ import java.util.Scanner;
 public class BDOMainUi {
     public static void CreateProjectUI(Scanner sc){
 
-        System.out.print(" Enter project name ");
+        System.out.print("Enter project name ");
         String proName = sc.next();
 
-        System.out.print(" Enter Start Date ");
+        System.out.print("Enter Start Date ");
         LocalDate startDate = LocalDate.parse(sc.next());
 
-        System.out.print(" Enter End Date ");
+        System.out.print("Enter End Date ");
         LocalDate endDate = LocalDate.parse(sc.next());
 
-        System.out.print(" Enter wages per day ");
+        System.out.print("Enter wages per day ");
         int wage = sc.nextInt();
 
         Project pro = new Project(proName,startDate,endDate,wage);
@@ -49,35 +49,35 @@ public class BDOMainUi {
     }
 
     public static void createGPM(Scanner sc){
-        System.out.print(" Enter GPM name ");
+        System.out.print("Enter GPM name ");
         String GpmName = sc.next();
 
-        System.out.print(" Enter Aadhar Number ");
+        System.out.print("Enter Aadhar Number ");
         String gpmAadhar = sc.next();
         if(gpmAadhar.length()<12){
             System.out.println("wrong Aadhar card");
             sc.close();
         }
 
-        System.out.print(" Enter GMP dob ");
+        System.out.print("Enter GMP dob ");
         LocalDate endDate = LocalDate.parse(sc.next());
 
-        System.out.print(" Enter GRM Gender ");
+        System.out.print("Enter GRM Gender ");
         String gemGender = sc.next();
 
-        System.out.print(" Enter GRM Email ");
+        System.out.print("Enter GRM Email ");
         String gpmEmail = sc.next();
 
-        System.out.print(" Enter GRM Password ");
+        System.out.print("Enter GRM Password ");
         String gpmPassword = sc.next();
 
-        System.out.print(" Enter GP Name ");
+        System.out.print("Enter GP Name ");
         String gpName = sc.next();
 
-        System.out.print(" Enter GP district ");
+        System.out.print("Enter GP district ");
         String district = sc.next();
 
-        System.out.print(" Enter GP state ");
+        System.out.print("Enter GP state ");
         String state = sc.next();
 
         GPA gpa = new GPA(GpmName,gpmAadhar,endDate,gemGender,gpmEmail,gpmPassword,gpName,district,state);
@@ -99,10 +99,10 @@ public class BDOMainUi {
         }
     }
     public static void allocateProjectGPM(Scanner sc){
-        System.out.println("Enter Project ID");
+        System.out.print("Enter Project ID ");
         int proID = sc.nextInt();
 
-        System.out.println("Enter GPM ID");
+        System.out.print("Enter GPM ID ");
         int gpmID = sc.nextInt();
 
         BDOint bdo = new BDOintImpl();

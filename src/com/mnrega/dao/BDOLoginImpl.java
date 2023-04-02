@@ -30,7 +30,7 @@ public class BDOLoginImpl implements BDOLogin {
             try {
                 DBUtils.closeConnection(conn);
             }catch(SQLException ex) {
-
+                System.out.println(ex);
             }
         }
     }

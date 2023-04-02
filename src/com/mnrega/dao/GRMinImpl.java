@@ -138,7 +138,7 @@ public class GRMinImpl implements GRMin{
             try {
                 DBUtils.closeConnection(conn);
             }catch(SQLException ex) {
-
+                System.out.println(ex);
             }
         }
         return worker;
@@ -226,7 +226,7 @@ public class GRMinImpl implements GRMin{
             try {
                 DBUtils.closeConnection(conn);
             }catch(SQLException ex) {
-
+                System.out.println(ex);
             }
         }
         return str;
@@ -259,7 +259,7 @@ public class GRMinImpl implements GRMin{
             try {
                 DBUtils.closeConnection(conn);
             }catch(SQLException ex) {
-
+                System.out.println(ex);
             }
         }
     }
