@@ -1,0 +1,113 @@
+MGNREGA
+
+
+create table GramPanchayatMember(
+        gpmID int primary key auto_increment,
+        gpmName varchar(20) not null,
+        gpmAadhar varchar(12) unique not null,
+        gmDob date not null,
+        gemGender varchar(6) not null,
+        gpmEmail varchar(20) unique not null,
+        gpmPassword varchar(20) not null,
+        gpName varchar(20) unique not null,
+        district varchar(20) not null,
+        state varchar(20) not null,
+        is_delete boolean not null default(false)
+    );
+
+create table project(
+        proID int primary key auto_increment,
+        proName varchar(20) not null,
+        proStrDate date not null,
+        proEndDate date not null,
+        gpmID int,
+        nOfWorkes int,
+        wagesParDay int not null,
+        is_delete boolean not null default(false),
+        foreign key (gpmID) references GramPanchayatMember(gpmID)
+    );
+
+create table workers(
+        wID int primary key auto_increment,
+        wName varchar(20) not null,
+        WAadhar varchar(12) unique not null,
+        wDob date not null,
+        Wender varchar(10) not null,
+        gpName varchar(20) not null,
+        gpmID int not null,
+        proID int,
+        workStrDate date,
+        district varchar(20) not null,
+        state varchar (20) not null,
+        is_delete boolean not null default(false),
+        foreign key (proID) references project(proID),
+        foreign key (gpmID) references GramPanchayatMember(gpmID)
+    );
+
+
+GramPanchayatMember
++-------------+-------------+------+-----+---------+-------------------+
+| Field       | Type        | Null | Key | Default | Extra             |
++-------------+-------------+------+-----+---------+-------------------+
+| gpmID       | int         | NO   | PRI | NULL    | auto_increment    |
+| gpmName     | varchar(20) | NO   |     | NULL    |                   |
+| gpmAadhar   | varchar(12) | NO   | UNI | NULL    |                   |
+| gmDob       | date        | NO   |     | NULL    |                   |
+| gemGender   | varchar(6)  | NO   |     | NULL    |                   |
+| gpmEmail    | varchar(20) | NO   | UNI | NULL    |                   |
+| gpmPassword | varchar(20) | NO   |     | NULL    |                   |
+| gpName      | varchar(20) | NO   | UNI | NULL    |                   |
+| district    | varchar(20) | NO   |     | NULL    |                   |
+| state       | varchar(20) | NO   |     | NULL    |                   |
+| is_delete   | tinyint(1)  | NO   |     | false   | DEFAULT_GENERATED |
++-------------+-------------+------+-----+---------+-------------------+
+
+
+
+
+project
++-------------+-------------+------+-----+---------+-------------------+
+| Field       | Type        | Null | Key | Default | Extra             |
++-------------+-------------+------+-----+---------+-------------------+
+| proID       | int         | NO   | PRI | NULL    | auto_increment    |
+| proName     | varchar(20) | NO   |     | NULL    |                   |
+| proStrDate  | date        | NO   |     | NULL    |                   |
+| proEndDate  | date        | NO   |     | NULL    |                   |
+| gpmID       | int         | YES  | MUL | NULL    |                   |
+| nOfWorkes   | int         | YES  |     | NULL    |                   |
+| wagesParDay | int         | NO   |     | NULL    |                   |
+| is_delete   | tinyint(1)  | NO   |     | false   | DEFAULT_GENERATED |
++-------------+-------------+------+-----+---------+-------------------+
+
+
+
+workers
++-------------+-------------+------+-----+---------+-------------------+
+| Field       | Type        | Null | Key | Default | Extra             |
++-------------+-------------+------+-----+---------+-------------------+
+| wID         | int         | NO   | PRI | NULL    | auto_increment    |
+| wName       | varchar(20) | NO   |     | NULL    |                   |
+| WAadhar     | varchar(12) | NO   | UNI | NULL    |                   |
+| wDob        | date        | NO   |     | NULL    |                   |
+| Wender      | varchar(10) | NO   |     | NULL    |                   |
+| gpName      | varchar(20) | NO   |     | NULL    |                   |
+| gpmID       | int         | NO   | MUL | NULL    |                   |
+| proID       | int         | YES  | MUL | NULL    |                   |
+| workStrDate | date        | YES  |     | NULL    |                   |
+| district    | varchar(20) | NO   |     | NULL    |                   |
+| state       | varchar(20) | NO   |     | NULL    |                   |
+| is_delete   | tinyint(1)  | NO   |     | false   | DEFAULT_GENERATED |
++-------------+-------------+------+-----+---------+-------------------+
+
+
+insert into workers (wName,WAadhar,wDob,Wender,gpName,workStrDate,district,state) VALUES
+    ('w1', '128378982121', '2000-11-11', 'male', 1, 'gp1', '2008-11-11', 'hp', 'up');
+
+
+
+
+
+
+
+
+
