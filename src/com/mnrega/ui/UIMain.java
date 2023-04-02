@@ -2,8 +2,7 @@ package com.mnrega.ui;
 
 import java.util.Scanner;
 
-import static com.mnrega.ui.BDOMainUi.CreateProjectUI;
-import static com.mnrega.ui.BDOMainUi.showAllProject;
+import static com.mnrega.ui.BDOMainUi.*;
 
 public class UIMain {
     static void displayBDOMenu() {
@@ -32,7 +31,7 @@ public class UIMain {
                     showAllProject();
                     break;
                 case 3:
-                    //productUI.addProduct();
+                    createGPM(sc);
                     break;
                 case 4:
                     //userUI.viewAllUsers();

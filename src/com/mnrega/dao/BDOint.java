@@ -1,5 +1,6 @@
 package com.mnrega.dao;
 
+import com.mnrega.dto.GPA;
 import com.mnrega.dto.Project;
 import com.mnrega.excetion.NoRecordFoundException;
 import com.mnrega.excetion.SomethingWentWrongException;
@@ -13,7 +14,7 @@ public interface BDOint {
 
     public List<Project> showAllProject () throws SomethingWentWrongException, NoRecordFoundException;
 
-//    public String createGPM (GPM gpm) throws SomethingWentWrongException, NoRecordFoundException;
+    public String createGPM (GPA gpm) throws SomethingWentWrongException, NoRecordFoundException;
 
 //    public List<GPM> showAl1GPM () throws GPMException, NoRecordFound;
 

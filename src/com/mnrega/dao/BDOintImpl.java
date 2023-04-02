@@ -1,5 +1,6 @@
 package com.mnrega.dao;
 
+import com.mnrega.dto.GPA;
 import com.mnrega.dto.Project;
 import com.mnrega.excetion.NoRecordFoundException;
 import com.mnrega.excetion.SomethingWentWrongException;
@@ -73,6 +74,39 @@ public class BDOintImpl implements BDOint {
             }
         }
         return list;
+    }
+
+    @Override
+    public String createGPM(GPA gpm) throws SomethingWentWrongException, NoRecordFoundException {
+        String str = "\nUnable to create GPM\n";
+        Connection conn = null;
+        try{
+            conn = DBUtils.getConnectionToDatabase();
+            PreparedStatement ps = conn.prepareStatement("insert into GramPanchayatMember (gpmName, gpmAadhar, gmDob, gemGender, gpmEmail, gpmPassword, gpName, district, state) VALUES(?,?,?,?,?,?,?,?,?)");
+            ps.setString(1, gpm.getGpmName());
+            ps.setString(2, gpm.getGpmAadhar());
+            ps.setDate(3, Date.valueOf(gpm.getGmDob()));
+            ps.setString(4, gpm.getGemGender());
+            ps.setString(5,gpm.getGpmEmail());
+            ps.setString(6,gpm.getGpmPassword());
+            ps.setString(7,gpm.getGpName());
+            ps.setString(8,gpm.getDistrict());
+            ps.setString(9,gpm.getState());
+            if(ps.executeUpdate()>0){
+                str = "\nGPM created successfully\n";
+            }else {
+                throw new SomethingWentWrongException("\nError while creating a new GPM. Try again\n");
+            }
+        }catch (ClassNotFoundException | SQLException ex){
+            System.out.println(ex);
+        }finally {
+            try {
+                DBUtils.closeConnection(conn);
+            }catch(SQLException ex) {
+
+            }
+        }
+        return str;
     }
 
 }

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class GPA {
     private int gpmID;
     private String gpmName;
-    private int gpmAadhar;
+    private String gpmAadhar;
     private LocalDate gmDob;
     private String gemGender;
     private String gpmEmail;
@@ -14,7 +14,8 @@ public class GPA {
     private String district;
     private String state;
 
-    public GPA(int gpmID, String gpmName, int gpmAadhar, LocalDate gmDob, String gemGender, String gpmEmail, String gpmPassword, String gpName, String district, String state) {
+    public GPA(int gpmID, String gpmName, String gpmAadhar, LocalDate gmDob, String gemGender, String gpmEmail, String gpmPassword, String gpName, String district, String state) {
+        super();
         this.gpmID = gpmID;
         this.gpmName = gpmName;
         this.gpmAadhar = gpmAadhar;
@@ -27,6 +28,18 @@ public class GPA {
         this.state = state;
     }
 
+    public GPA(String gpmName, String gpmAadhar, LocalDate gmDob, String gemGender, String gpmEmail, String gpmPassword, String gpName, String district, String state) {
+        super();
+        this.gpmName = gpmName;
+        this.gpmAadhar = gpmAadhar;
+        this.gmDob = gmDob;
+        this.gemGender = gemGender;
+        this.gpmEmail = gpmEmail;
+        this.gpmPassword = gpmPassword;
+        this.gpName = gpName;
+        this.district = district;
+        this.state = state;
+    }
     public int getGpmID() {
         return gpmID;
     }
@@ -43,11 +56,11 @@ public class GPA {
         this.gpmName = gpmName;
     }
 
-    public int getGpmAadhar() {
+    public String getGpmAadhar() {
         return gpmAadhar;
     }
 
-    public void setGpmAadhar(int gpmAadhar) {
+    public void setGpmAadhar(String gpmAadhar) {
         this.gpmAadhar = gpmAadhar;
     }
 
