@@ -8,7 +8,7 @@ import com.mnrega.excetion.SomethingWentWrongException;
 import java.util.Scanner;
 
 import static com.mnrega.ui.BDOMainUi.*;
-import static com.mnrega.ui.BDOUi.createWorker;
+import static com.mnrega.ui.BDOUi.*;
 
 public class UIMain {
     static void displayBDOMenu() {
@@ -93,10 +93,10 @@ public class UIMain {
                         createWorker(sc);
                         break;
                     case 2:
-//                    OrderUI.purchase(sc);
+                        showAllWorkerGPM();
                         break;
                     case 3:
-                        //orderUI.viewOrderDetails();
+                        SearchAadharDetails(sc);
                         break;
                     case 4:
                         //userUI.updateNameOfUser();

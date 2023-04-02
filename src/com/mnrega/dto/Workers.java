@@ -29,6 +29,20 @@ public class Workers {
         this.district = district;
         this.state = state;
     }
+    public Workers(int wID, String wName, String WAadhar, LocalDate wDob, String WGender, String gpName, int gpmID, int proID, String district, String state) {
+        super();
+        this.wID = wID;
+        this.wName = wName;
+        this.WAadhar = WAadhar;
+        this.wDob = wDob;
+        this.WGender = WGender;
+        this.gpName = gpName;
+        this.gpmID = gpmID;
+        this.proID = proID;
+//        this.workStrDate = workStrDate;
+        this.district = district;
+        this.state = state;
+    }
     public Workers(String wName, String WAadhar, LocalDate wDob, String WGender){
         super();
         this.wName = wName;

@@ -1,9 +1,7 @@
 package com.mnrega.ui;
 
-import com.mnrega.dao.BDOLogin;
-import com.mnrega.dao.BDOLoginImpl;
-import com.mnrega.dao.GRMin;
-import com.mnrega.dao.GRMinImpl;
+import com.mnrega.dao.*;
+import com.mnrega.dto.Project;
 import com.mnrega.dto.Workers;
 import com.mnrega.excetion.NoRecordFoundException;
 import com.mnrega.excetion.SomethingWentWrongException;
@@ -11,6 +9,7 @@ import com.mnrega.excetion.SomethingWentWrongException;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 import static com.mnrega.ui.UIMain.displayGEMMenu;
@@ -59,6 +58,30 @@ public class BDOUi {
             grMin.createWorker(workers);
             System.out.println("Worker Added successfully");
         }catch (InputMismatchException | SomethingWentWrongException ex){
+            System.out.println(ex);
+        }
+    }
+
+    public static void showAllWorkerGPM(){
+        GRMin grMin = new GRMinImpl();
+        try {
+            List<Workers> workers = grMin.showAllWorkerGPM();
+            workers.forEach(System.out::println);
+        }catch (SomethingWentWrongException ex){
+            System.out.println(ex);
+        }
+    }
+
+    public static void SearchAadharDetails(Scanner sc){
+
+        System.out.print("Enter Aadhar Details ");
+        String Aadhar = sc.next();
+
+        GRMin grMin = new GRMinImpl();
+        try {
+            Workers worker = grMin.SearchAadharDetails(Aadhar);
+            System.out.println(worker);
+        }catch (SomethingWentWrongException ex){
             System.out.println(ex);
         }
     }
