@@ -99,13 +99,13 @@ public class UIMain {
                         SearchAadharDetails(sc);
                         break;
                     case 4:
-                        //userUI.updateNameOfUser();
+                        assignProWorker(sc);
                         break;
                     case 5:
-                        //userUI.changePassword();
+                        showWorkerWorkingDay(sc);
                         break;
                     case 6:
-                        //userUI.deleteUser();
+                        deleteWorker(sc);
                     case 0:
                         BDOUi.logOut();
                         break;

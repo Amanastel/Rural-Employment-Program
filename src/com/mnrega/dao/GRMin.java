@@ -14,15 +14,15 @@ public interface GRMin {
 
     public Workers SearchAadharDetails(String aadhar) throws SomethingWentWrongException;
 
-//    public String assignProToworker (int proID, int wID) throws SomethingWentWrongException, NoRecordFoundException;
+    public String assignProWorker(int proID, int wID) throws SomethingWentWrongException, NoRecordFoundException;
 
-//    public void showWorkerAndworkingDay ( ) throws SomethingWentWrongException;
+    public void showWorkerWorkingDay() throws SomethingWentWrongException;
 
 //    public void ShowWorkerAndWages () throws SomethingWentWrongException;
 
-//    public String deleteWorker (int wID) throws SomethingWentWrongException;
+    public String deleteWorker(int wID) throws SomethingWentWrongException;
 
-//    public void countNoofWorker () ;
+    public void countOfWorker () ;
 
 
     public void logout();

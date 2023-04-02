@@ -85,4 +85,41 @@ public class BDOUi {
             System.out.println(ex);
         }
     }
+
+    public static void assignProWorker(Scanner sc){
+        System.out.print("Enter Project ID ");
+        int proID = sc.nextInt();
+
+        System.out.print("Enter GPM ID ");
+        int wID = sc.nextInt();
+        GRMin grMin = new GRMinImpl();
+        try {
+            grMin.assignProWorker(proID,wID);
+            System.out.println("Assign Project to worker successfully");
+        }catch (InputMismatchException | NoRecordFoundException | SomethingWentWrongException ex){
+            System.out.println(ex);
+        }
+    }
+    public static void deleteWorker(Scanner sc){
+        System.out.print("Enter Worker ID");
+        int worker = sc.nextInt();
+        GRMin grMin = new GRMinImpl();
+        try {
+            grMin.deleteWorker(worker);
+        }catch (SomethingWentWrongException ex){
+            System.out.println(ex);
+        }
+    }
+
+    public static void showWorkerWorkingDay(Scanner sc){
+
+        GRMin grMin = new GRMinImpl();
+        try {
+            grMin.showWorkerWorkingDay();
+        }catch (SomethingWentWrongException ex){
+            System.out.println(ex);
+        }
+    }
+
+
 }

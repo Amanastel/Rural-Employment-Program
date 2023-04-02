@@ -173,7 +173,8 @@ public class BDOintImpl implements BDOint {
                 throw new SomethingWentWrongException ("\nProject Id " + proID + " doesn't exist! \n");
             }
 
-        }catch (ClassNotFoundException | SQLException ex){
+        }
+        catch (ClassNotFoundException | SQLException ex){
             System.out.println(ex);
         }
 
@@ -195,7 +196,7 @@ public class BDOintImpl implements BDOint {
                         rs.getString(5),rs.getString(5),rs.getInt(6),rs.getInt(7),rs.getDate(8).toLocalDate(),
                         rs.getString(9),rs.getString(10)));
             }
-            if(bol== false){
+            if(bol == false){
                 throw new SomethingWentWrongException ("\nNo Worker available\n");
             }
 
