@@ -4,6 +4,7 @@ import com.mnrega.dao.BDOint;
 import com.mnrega.dao.BDOintImpl;
 import com.mnrega.dto.GPA;
 import com.mnrega.dto.Project;
+import com.mnrega.dto.Workers;
 import com.mnrega.excetion.NoRecordFoundException;
 import com.mnrega.excetion.SomethingWentWrongException;
 
@@ -83,7 +84,41 @@ public class BDOMainUi {
         BDOint bdo = new BDOintImpl();
         try {
             bdo.createGPM(gpa);
+            System.out.println("Create GPM successfully");
         }catch (InputMismatchException | NoRecordFoundException | SomethingWentWrongException ex){
+            System.out.println(ex);
+        }
+    }
+    public static void showAl1GPM(){
+        BDOint bdo = new BDOintImpl();
+        try {
+            List<GPA> gpm = bdo.showAl1GPM();
+            gpm.forEach(System.out::println);
+        }catch (NoRecordFoundException | SomethingWentWrongException ex){
+            System.out.println(ex);
+        }
+    }
+    public static void allocateProjectGPM(Scanner sc){
+        System.out.println("Enter Project ID");
+        int proID = sc.nextInt();
+
+        System.out.println("Enter GPM ID");
+        int gpmID = sc.nextInt();
+
+        BDOint bdo = new BDOintImpl();
+        try {
+            bdo.allocateProjectGPM(proID,gpmID);
+            System.out.println("Allocate Project successfully");
+        }catch (InputMismatchException | NoRecordFoundException | SomethingWentWrongException ex){
+            System.out.println(ex);
+        }
+    }
+    public static void showAllWorker(){
+        BDOint bdo = new BDOintImpl();
+        try {
+            List<Workers> list = bdo.showAllWorker();
+            list.forEach(System.out::println);
+        }catch (NoRecordFoundException | SomethingWentWrongException ex){
             System.out.println(ex);
         }
     }

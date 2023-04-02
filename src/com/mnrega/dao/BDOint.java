@@ -2,6 +2,7 @@ package com.mnrega.dao;
 
 import com.mnrega.dto.GPA;
 import com.mnrega.dto.Project;
+import com.mnrega.dto.Workers;
 import com.mnrega.excetion.NoRecordFoundException;
 import com.mnrega.excetion.SomethingWentWrongException;
 
@@ -16,11 +17,11 @@ public interface BDOint {
 
     public String createGPM (GPA gpm) throws SomethingWentWrongException, NoRecordFoundException;
 
-//    public List<GPM> showAl1GPM () throws GPMException, NoRecordFound;
+    public List<GPA> showAl1GPM () throws SomethingWentWrongException, NoRecordFoundException;
 
-//    public String assignProToGPM(int proID, int gpmID) throws ProjectException, GPMException;
+    public String allocateProjectGPM(int proID, int gpmID) throws SomethingWentWrongException, NoRecordFoundException;
 
-//    public List<Worker> showAllWorker () throws WorkerException, NoRecordFound;
+    public List<Workers> showAllWorker () throws SomethingWentWrongException, NoRecordFoundException;
 
 //    public List<Worker> showAllWorkerByGMID(int gpmID) throws WorkerException, GPMException;
 
