@@ -16,6 +16,7 @@ public class Workers {
     private String state;
 
     public Workers(int wID, String wName, String WAadhar, LocalDate wDob, String WGender, String gpName, int gpmID, int proID, LocalDate workStrDate, String district, String state) {
+        super();
         this.wID = wID;
         this.wName = wName;
         this.WAadhar = WAadhar;
@@ -27,6 +28,13 @@ public class Workers {
         this.workStrDate = workStrDate;
         this.district = district;
         this.state = state;
+    }
+    public Workers(String wName, String WAadhar, LocalDate wDob, String WGender){
+        super();
+        this.wName = wName;
+        this.WAadhar = WAadhar;
+        this.wDob = wDob;
+        this.WGender = WGender;
     }
 
     public int getwID() {

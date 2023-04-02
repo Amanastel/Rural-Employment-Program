@@ -8,6 +8,7 @@ import com.mnrega.excetion.SomethingWentWrongException;
 import java.util.Scanner;
 
 import static com.mnrega.ui.BDOMainUi.*;
+import static com.mnrega.ui.BDOUi.createWorker;
 
 public class UIMain {
     static void displayBDOMenu() {
@@ -79,39 +80,41 @@ public class UIMain {
         System.out.println("0. Logout");
     }
     public static void GPMLogin(Scanner sc){
-        if(BDOUi.login(sc))
-            return;
-        int choice = 0;
-        do {
-            displayGEMMenu();
-            System.out.print("Enter selection ");
-            choice = sc.nextInt();
-            switch(choice) {
-                case 1:
-                    //productUI.viewAllProducts();
-                    break;
-                case 2:
-//                    OrderUI.purchase(sc);
-                    break;
-                case 3:
-                    //orderUI.viewOrderDetails();
-                    break;
-                case 4:
-                    //userUI.updateNameOfUser();
-                    break;
-                case 5:
-                    //userUI.changePassword();
-                    break;
-                case 6:
-                    //userUI.deleteUser();
-                case 0:
-                    BDOUi.logOut();
-                    break;
-                default:
-                    System.out.println("Invalid Selection, try again");
-            }
-        }while(choice != 0);
+//        Gram Panchayat Member login
+        if(BDOUi.login(sc)) {
 
+            int choice = 0;
+            do {
+                displayGEMMenu();
+                System.out.print("Enter selection ");
+                choice = sc.nextInt();
+                switch (choice) {
+                    case 1:
+                        createWorker(sc);
+                        break;
+                    case 2:
+//                    OrderUI.purchase(sc);
+                        break;
+                    case 3:
+                        //orderUI.viewOrderDetails();
+                        break;
+                    case 4:
+                        //userUI.updateNameOfUser();
+                        break;
+                    case 5:
+                        //userUI.changePassword();
+                        break;
+                    case 6:
+                        //userUI.deleteUser();
+                    case 0:
+                        BDOUi.logOut();
+                        break;
+                    default:
+                        System.out.println("Invalid Selection, try again");
+                }
+            } while (choice != 0);
+            sc.close();
+        }
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
