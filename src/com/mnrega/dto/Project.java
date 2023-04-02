@@ -5,17 +5,17 @@ import java.time.LocalDate;
 public class Project {
     private int proID;
     private String proName;
-    private LocalDate proStrate;
+    private LocalDate proStartDate;
     private LocalDate proEndDate;
     private int gpmID;
     private int noOfWorker;
     private int wagesParDay;
     public Project () {}
-    public Project (int proID, String proName, LocalDate proStrate, LocalDate proEndDate, int gpmID, int noOfWorker, int wagesParDay){
+    public Project (int proID, String proName, LocalDate proStartDate, LocalDate proEndDate, int gpmID, int noOfWorker, int wagesParDay){
         super();
         this.proID = proID;
         this.proName = proName;
-        this.proStrate = proStrate;
+        this.proStartDate = proStartDate;
         this.proEndDate = proEndDate;
         this.gpmID = gpmID;
         this.noOfWorker = noOfWorker;
@@ -25,7 +25,7 @@ public class Project {
     public Project (String proName, LocalDate proStrate, LocalDate proEndDate, int wagesParDay){
         super();
         this.proName = proName;
-        this.proStrate = proStrate;
+        this.proStartDate = proStrate;
         this.proEndDate = proEndDate;
         this.wagesParDay = wagesParDay;
 
@@ -47,12 +47,12 @@ public class Project {
         this.proName = proName;
     }
 
-    public LocalDate getProStrate() {
-        return proStrate;
+    public LocalDate getproStartDate() {
+        return proStartDate;
     }
 
-    public void setProStrate(LocalDate proStrate) {
-        this.proStrate = proStrate;
+    public void setProStartDate(LocalDate proStrate) {
+        this.proStartDate = proStrate;
     }
 
     public LocalDate getProEndDate() {
@@ -92,7 +92,7 @@ public class Project {
         return "Project{" +
                 "proID=" + proID +
                 ", proName='" + proName + '\'' +
-                ", proStrate=" + proStrate +
+                ", proStartDate=" + proStartDate +
                 ", proEndDate=" + proEndDate +
                 ", gpmID=" + gpmID +
                 ", noOfWorker=" + noOfWorker +
