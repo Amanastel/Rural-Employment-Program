@@ -13,7 +13,7 @@ public interface BDOint {
 
     public List<Project> showAllProject () throws SomethingWentWrongException, NoRecordFoundException;
 
-//    public String createGPM (GPM gpm) throws GPMException;
+//    public String createGPM (GPM gpm) throws SomethingWentWrongException, NoRecordFoundException;
 
 //    public List<GPM> showAl1GPM () throws GPMException, NoRecordFound;
 
