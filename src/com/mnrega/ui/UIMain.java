@@ -69,9 +69,11 @@ public class UIMain {
     }
 
     static void BDOLogin(Scanner sc) {
-        System.out.print("Enter username ");
+        System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT +" Enter username  " + ConsoleColors.RESET);
+//        System.out.print("Enter username ");
         String username = sc.next();
-        System.out.print("Enter password ");
+        System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT +" Enter password " + ConsoleColors.RESET);
+//        System.out.print("Enter password ");
         String password = sc.next();
 
         if(username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
@@ -93,14 +95,14 @@ public class UIMain {
 //        System.out.println("0. Logout");
 
         System.out.println(ConsoleColors.BROWN_BACKGROUND+ConsoleColors.WHITE_BOLD_BRIGHT+"Welcome to Gram Panchayat Member Home Window : "+ ConsoleColors.RESET);
-        System.out.println("Press 1 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 1. Create worker " + ConsoleColors.RESET);
-        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 2. View GP worker " + ConsoleColors.RESET);
-        System.out.println("Press 3 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 3. Search worker by Aadhar " + ConsoleColors.RESET);
-        System.out.println("Press 4 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 4. Assign project to worker " + ConsoleColors.RESET);
-        System.out.println("Press 5 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 5. View worker and working day " + ConsoleColors.RESET);
-        System.out.println("Press 6 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 6. Delete the worker " + ConsoleColors.RESET);
-        System.out.println("Press 7 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 7. View all worker " + ConsoleColors.RESET);
-        System.out.println("Press 7 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 0. LOGOUT AND RETURN TO HOMEPAGE" + ConsoleColors.RESET);
+        System.out.println("Press 1 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" Create worker " + ConsoleColors.RESET);
+        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" View GP worker " + ConsoleColors.RESET);
+        System.out.println("Press 3 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" Search worker by Aadhar " + ConsoleColors.RESET);
+        System.out.println("Press 4 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" Assign project to worker " + ConsoleColors.RESET);
+        System.out.println("Press 5 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" View worker and working day " + ConsoleColors.RESET);
+        System.out.println("Press 6 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" Delete the worker " + ConsoleColors.RESET);
+        System.out.println("Press 7 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" View all worker " + ConsoleColors.RESET);
+        System.out.println("Press 0 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" LOGOUT " + ConsoleColors.RESET);
     }
     public static void GPMLogin(Scanner sc){
 //        Gram Panchayat Member login

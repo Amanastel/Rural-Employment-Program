@@ -6,6 +6,7 @@ import com.mnrega.dto.Project;
 import com.mnrega.dto.Workers;
 import com.mnrega.excetion.NoRecordFoundException;
 import com.mnrega.excetion.SomethingWentWrongException;
+import custom.ConsoleColors;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -17,12 +18,14 @@ import static com.mnrega.ui.UIMain.displayGEMMenu;
 
 public class BDOUi {
     static boolean login(Scanner sc) {
-        System.out.print("Enter email ");
+        System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Choose Login Option from Below According to your Designation  : " + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.PURPLE_BOLD_BRIGHT + " Enter email " + ConsoleColors.RESET);
+
+//        System.out.print("Enter email ")
         String email = sc.next();
-
-        System.out.print("Enter password ");
+        System.out.println(ConsoleColors.PURPLE_BOLD_BRIGHT + " Enter password "+ ConsoleColors.RESET);
+//        System.out.print("Enter password ");
         String password = sc.next();
-
         BDOLogin bdoLogin = new BDOLoginImpl();
         try {
             bdoLogin.login(email,password);
