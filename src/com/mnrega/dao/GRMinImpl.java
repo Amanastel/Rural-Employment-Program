@@ -1,5 +1,6 @@
 package com.mnrega.dao;
 
+import com.mnrega.dto.GPA;
 import com.mnrega.dto.Workers;
 import com.mnrega.excetion.NoRecordFoundException;
 import com.mnrega.excetion.SomethingWentWrongException;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GRMinImpl implements GRMin{
-    public static int GPMID = 1;
+//    public static int GPMID = 2;
     @Override
     public boolean login(String email, String password) throws SomethingWentWrongException, NoRecordFoundException{
         Connection conn = null;
@@ -39,13 +40,13 @@ public class GRMinImpl implements GRMin{
     }
 
     @Override
-    public String createWorker(Workers worker) throws SomethingWentWrongException {
+    public String createWorker(Workers worker, LoggedInBDO gpmID) throws SomethingWentWrongException {
         String str = " nUnable to create worker\n";
         Connection conn = null;
         try {
             conn = DBUtils.getConnectionToDatabase();
             PreparedStatement ps = conn.prepareStatement("select gpmName, district, state from GramPanchayatMember where gpmID = ? and is_delete = false");
-            ps.setInt(1, GPMID);
+            ps.setInt(1, gpmID.getLoggedInBDOId());
             ResultSet rs = ps.executeQuery();
             String gpName = null;
             String district = null;
@@ -62,7 +63,7 @@ public class GRMinImpl implements GRMin{
             prs.setDate(3, Date.valueOf(worker.getwDob()));
             prs.setString(4,worker.getWGender());
             prs.setString(5, gpName);
-            prs.setInt(6, GPMID);
+            prs.setInt(6, gpmID.getLoggedInBDOId());
             prs.setString(7, district);
             prs.setString(8, state);
             if(prs.executeUpdate()>0){
@@ -177,12 +178,12 @@ public class GRMinImpl implements GRMin{
     }
 
     @Override
-    public void showWorkerWorkingDay() throws SomethingWentWrongException {
+    public void showWorkerWorkingDay(LoggedInBDO gpmID) throws SomethingWentWrongException {
         Connection conn = null;
         try {
             conn = DBUtils.getConnectionToDatabase();
             PreparedStatement ps = conn.prepareStatement("select wName, datediff(now(), workStrDate) from workers where gpmID = ? and is_delete = false");
-            ps.setInt(1,GPMID);
+            ps.setInt(1,gpmID.getLoggedInBDOId());
             ResultSet rs = ps.executeQuery();
             boolean bolF1 = false;
             while(rs.next()){
@@ -205,7 +206,7 @@ public class GRMinImpl implements GRMin{
     }
 
     @Override
-    public String deleteWorker(int wID) throws SomethingWentWrongException {
+    public String deleteWorker(int wID,LoggedInBDO gpmID) throws SomethingWentWrongException {
         String str = "\nUnable to delete worker\n";
         Connection conn = null;
         try {
@@ -215,7 +216,7 @@ public class GRMinImpl implements GRMin{
 
             if(ps.executeUpdate()>0){
                 str = "Inworker ID no " + wID + " deleted\n";
-                countOfWorker();
+                countOfWorker(gpmID);
             }else {
                 throw new SomethingWentWrongException("\nWorker ID " + wID + " doesn't exist! \n");
             }
@@ -233,17 +234,17 @@ public class GRMinImpl implements GRMin{
     }
 
     @Override
-    public void countOfWorker() {
+    public void countOfWorker(LoggedInBDO gpmID) {
         Connection conn = null;
         try {
             conn = DBUtils.getConnectionToDatabase();
             PreparedStatement ps = conn.prepareStatement("select proID from project where gpmID = ? and is_delete = false");
-            ps.setInt(1,GPMID);
+            ps.setInt(1,gpmID.getLoggedInBDOId());
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 int proId = rs.getInt(1);
                 PreparedStatement prs = conn.prepareStatement("select count(*) from workers where gpmID = ? and proID = ? and is_delete = false");
-                prs.setInt(1,GPMID);
+                prs.setInt(1,gpmID.getLoggedInBDOId());
                 prs.setInt(2,proId);
                 ResultSet rs2 = prs.executeQuery();
                 if(rs2.next()){

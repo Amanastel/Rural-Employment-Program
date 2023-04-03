@@ -22,8 +22,9 @@ public class BDOLoginImpl implements BDOLogin {
             if(DBUtils.isResultSetEmpty(rs)){
                 throw new NoRecordFoundException("Invalid username or password");
             }
-            rs.next();
-            LoggedInBDO.loggedInBDOId = rs.getInt(1);
+            while (rs.next()){
+                LoggedInBDO.loggedInBDOId = rs.getInt(1);
+            }
         }catch (ClassNotFoundException | SQLException ex){
             throw new SomethingWentWrongException("Unable to login");
         }finally {

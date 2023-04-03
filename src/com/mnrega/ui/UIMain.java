@@ -4,6 +4,7 @@ import com.mnrega.dao.BDOLogin;
 import com.mnrega.dao.BDOLoginImpl;
 import com.mnrega.excetion.NoRecordFoundException;
 import com.mnrega.excetion.SomethingWentWrongException;
+import custom.ConsoleColors;
 
 import java.util.Scanner;
 
@@ -12,13 +13,24 @@ import static com.mnrega.ui.BDOUi.*;
 
 public class UIMain {
     static void displayBDOMenu() {
-        System.out.println("1. Create Project ");
-        System.out.println("2. View List of Project ");
-        System.out.println("3. Create GPM ");
-        System.out.println("4. View all GPM ");
-        System.out.println("5. Allocate Project to GPM ");
-        System.out.println("6. View all worker ");
-        System.out.println("0. Log out ");
+//        System.out.println("1. Create Project ");
+//        System.out.println("2. View List of Project ");
+//        System.out.println("3. Create GPM ");
+//        System.out.println("4. View all GPM ");
+//        System.out.println("5. Allocate Project to GPM ");
+//        System.out.println("6. View all worker ");
+//        System.out.println("0. Log out ");
+
+
+        System.out.println(ConsoleColors.BROWN_BACKGROUND+ConsoleColors.WHITE_BOLD_BRIGHT+"Welcome to BDO Home Window : "+ ConsoleColors.RESET);
+        System.out.println("Press 1 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 1. Create Project " + ConsoleColors.RESET);
+        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 2. View List of Project " + ConsoleColors.RESET);
+        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 3. Create GPM " + ConsoleColors.RESET);
+        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 4. View all GPM " + ConsoleColors.RESET);
+        System.out.println("Press 3 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 5. Allocate GPM to a Project." + ConsoleColors.RESET);
+        System.out.println("Press 3 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 6. View all worker " + ConsoleColors.RESET);
+//        System.out.println("Press 4 to"+ConsoleColors.PURPLE_BOLD_BRIGHT+" View deatil of all GPM Working along with wages, day worked and Total Receivable Amount Till Current Day." + ConsoleColors.RESET);
+        System.out.println("Press 5 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 0. LOGOUT AND RETURN TO HOMEPAGE" + ConsoleColors.RESET);
     }
 
     static void BDOMenu(Scanner sc) {
@@ -71,13 +83,24 @@ public class UIMain {
 
 
     static void displayGEMMenu() {
-        System.out.println("1. Create worker ");
-        System.out.println("2. View GP worker ");
-        System.out.println("3. Search worker by Aadhar ");
-        System.out.println("4. Assign project to worker ");
-        System.out.println("5. View worker and working day ");
-        System.out.println("6. Delete the worker ");
-        System.out.println("0. Logout");
+//        System.out.println("1. Create worker ");
+//        System.out.println("2. View GP worker ");
+//        System.out.println("3. Search worker by Aadhar ");
+//        System.out.println("4. Assign project to worker ");
+//        System.out.println("5. View worker and working day ");
+//        System.out.println("6. Delete the worker ");
+//        System.out.println("7. View all worker ");
+//        System.out.println("0. Logout");
+
+        System.out.println(ConsoleColors.BROWN_BACKGROUND+ConsoleColors.WHITE_BOLD_BRIGHT+"Welcome to Gram Panchayat Member Home Window : "+ ConsoleColors.RESET);
+        System.out.println("Press 1 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 1. Create worker " + ConsoleColors.RESET);
+        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 2. View GP worker " + ConsoleColors.RESET);
+        System.out.println("Press 3 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 3. Search worker by Aadhar " + ConsoleColors.RESET);
+        System.out.println("Press 4 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 4. Assign project to worker " + ConsoleColors.RESET);
+        System.out.println("Press 5 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 5. View worker and working day " + ConsoleColors.RESET);
+        System.out.println("Press 6 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 6. Delete the worker " + ConsoleColors.RESET);
+        System.out.println("Press 7 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 7. View all worker " + ConsoleColors.RESET);
+        System.out.println("Press 7 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 0. LOGOUT AND RETURN TO HOMEPAGE" + ConsoleColors.RESET);
     }
     public static void GPMLogin(Scanner sc){
 //        Gram Panchayat Member login
@@ -106,6 +129,10 @@ public class UIMain {
                         break;
                     case 6:
                         deleteWorker(sc);
+                        break;
+                    case 7:
+                        showAllWorker();
+                        break;
                     case 0:
                         BDOUi.logOut();
                         break;
@@ -120,11 +147,19 @@ public class UIMain {
         Scanner sc = new Scanner(System.in);
         int choice = 0;
         do {
-            System.out.println("1. BDO Login\n2. GPM Login \n0. Exit ");
+
+//            System.out.println("1. BDO Login\n2. GPM Login \n0. Exit ");
+
+            System.out.println(ConsoleColors.BROWN_BACKGROUND+ConsoleColors.WHITE_BOLD_BRIGHT+"Welcome to GRAM MGNREGA Application : "+ ConsoleColors.RESET);
+            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Choose Login Option from Below According to your Designation  : " + ConsoleColors.RESET);
+            System.out.println("Press 1 to" +ConsoleColors.PURPLE_BOLD_BRIGHT + " logIn as BDO. " + ConsoleColors.RESET);
+            System.out.println("Press 2 to" +ConsoleColors.PURPLE_BOLD_BRIGHT + " logIn as Gram Panchayat Member. "+ ConsoleColors.RESET);
+            System.out.println("Press 3 to" +ConsoleColors.PURPLE_BOLD_BRIGHT +" EXIT. "+ ConsoleColors.RESET);
             choice = sc.nextInt();
             switch(choice) {
-                case 0:
+                case 3:
                     System.out.println("Thank you, Visit again");
+                    sc.close();
                     break;
                 case 1:
                     BDOLogin(sc);

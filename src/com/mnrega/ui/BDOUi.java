@@ -1,6 +1,7 @@
 package com.mnrega.ui;
 
 import com.mnrega.dao.*;
+import com.mnrega.dto.GPA;
 import com.mnrega.dto.Project;
 import com.mnrega.dto.Workers;
 import com.mnrega.excetion.NoRecordFoundException;
@@ -51,11 +52,13 @@ public class BDOUi {
         System.out.print("Enter Gender ");
         String wGander = sc.next();
 
+        LoggedInBDO f = new LoggedInBDO();
+
         Workers workers = new Workers(wName,wAadhar,wDob,wGander);
 
         GRMin grMin = new GRMinImpl();
         try {
-            grMin.createWorker(workers);
+            grMin.createWorker(workers, f);
             System.out.println("Worker Added successfully");
         }catch (InputMismatchException | SomethingWentWrongException ex){
             System.out.println(ex);
@@ -104,22 +107,21 @@ public class BDOUi {
         System.out.print("Enter Worker ID");
         int worker = sc.nextInt();
         GRMin grMin = new GRMinImpl();
+        LoggedInBDO f = new LoggedInBDO();
         try {
-            grMin.deleteWorker(worker);
+            grMin.deleteWorker(worker,f);
         }catch (SomethingWentWrongException ex){
             System.out.println(ex);
         }
     }
 
     public static void showWorkerWorkingDay(Scanner sc){
-
         GRMin grMin = new GRMinImpl();
+        LoggedInBDO f = new LoggedInBDO();
         try {
-            grMin.showWorkerWorkingDay();
+            grMin.showWorkerWorkingDay(f);
         }catch (SomethingWentWrongException ex){
             System.out.println(ex);
         }
     }
-
-
 }
