@@ -20,8 +20,6 @@ public class BDOUi {
     static boolean login(Scanner sc) {
         System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Choose Login Option from Below According to your Designation  : " + ConsoleColors.RESET);
         System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT + "Enter email " + ConsoleColors.RESET);
-
-//        System.out.print("Enter email ")
         String email = sc.next();
         System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT + "Enter password "+ ConsoleColors.RESET);
 //        System.out.print("Enter password ");
