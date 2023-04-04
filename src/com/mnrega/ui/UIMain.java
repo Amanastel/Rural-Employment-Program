@@ -29,7 +29,6 @@ public class UIMain {
         System.out.println("Press 4 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  View all GPM " + ConsoleColors.RESET);
         System.out.println("Press 5 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  Allocate GPM to a Project." + ConsoleColors.RESET);
         System.out.println("Press 6 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  View all worker " + ConsoleColors.RESET);
-//        System.out.println("Press 4 to"+ConsoleColors.PURPLE_BOLD_BRIGHT+" View deatil of all GPM Working along with wages, day worked and Total Receivable Amount Till Current Day." + ConsoleColors.RESET);
         System.out.println("Press 0 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  LOGOUT AND RETURN TO HOMEPAGE" + ConsoleColors.RESET);
     }
 
