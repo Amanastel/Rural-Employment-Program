@@ -23,14 +23,14 @@ public class UIMain {
 
 
         System.out.println(ConsoleColors.BROWN_BACKGROUND+ConsoleColors.WHITE_BOLD_BRIGHT+"Welcome to BDO Home Window : "+ ConsoleColors.RESET);
-        System.out.println("Press 1 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 1. Create Project " + ConsoleColors.RESET);
-        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 2. View List of Project " + ConsoleColors.RESET);
-        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 3. Create GPM " + ConsoleColors.RESET);
-        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 4. View all GPM " + ConsoleColors.RESET);
-        System.out.println("Press 3 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 5. Allocate GPM to a Project." + ConsoleColors.RESET);
-        System.out.println("Press 3 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 6. View all worker " + ConsoleColors.RESET);
+        System.out.println("Press 1 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  Create Project " + ConsoleColors.RESET);
+        System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  View List of Project " + ConsoleColors.RESET);
+        System.out.println("Press 3 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  Create GPM " + ConsoleColors.RESET);
+        System.out.println("Press 4 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  View all GPM " + ConsoleColors.RESET);
+        System.out.println("Press 5 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  Allocate GPM to a Project." + ConsoleColors.RESET);
+        System.out.println("Press 6 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  View all worker " + ConsoleColors.RESET);
 //        System.out.println("Press 4 to"+ConsoleColors.PURPLE_BOLD_BRIGHT+" View deatil of all GPM Working along with wages, day worked and Total Receivable Amount Till Current Day." + ConsoleColors.RESET);
-        System.out.println("Press 5 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" 0. LOGOUT AND RETURN TO HOMEPAGE" + ConsoleColors.RESET);
+        System.out.println("Press 0 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  LOGOUT AND RETURN TO HOMEPAGE" + ConsoleColors.RESET);
     }
 
     static void BDOMenu(Scanner sc) {
