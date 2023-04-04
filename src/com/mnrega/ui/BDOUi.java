@@ -22,7 +22,6 @@ public class BDOUi {
         System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT + "Enter email " + ConsoleColors.RESET);
         String email = sc.next();
         System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT + "Enter password "+ ConsoleColors.RESET);
-//        System.out.print("Enter password ");
         String password = sc.next();
         BDOLogin bdoLogin = new BDOLoginImpl();
         try {
