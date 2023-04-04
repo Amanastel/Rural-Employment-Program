@@ -13,15 +13,6 @@ import static com.mnrega.ui.BDOUi.*;
 
 public class UIMain {
     static void displayBDOMenu() {
-//        System.out.println("1. Create Project ");
-//        System.out.println("2. View List of Project ");
-//        System.out.println("3. Create GPM ");
-//        System.out.println("4. View all GPM ");
-//        System.out.println("5. Allocate Project to GPM ");
-//        System.out.println("6. View all worker ");
-//        System.out.println("0. Log out ");
-
-
         System.out.println(ConsoleColors.BROWN_BACKGROUND+ConsoleColors.WHITE_BOLD_BRIGHT+"Welcome to BDO Home Window : "+ ConsoleColors.RESET);
         System.out.println("Press 1 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  Create Project " + ConsoleColors.RESET);
         System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +"  View List of Project " + ConsoleColors.RESET);
@@ -84,15 +75,6 @@ public class UIMain {
 
 
     static void displayGEMMenu() {
-//        System.out.println("1. Create worker ");
-//        System.out.println("2. View GP worker ");
-//        System.out.println("3. Search worker by Aadhar ");
-//        System.out.println("4. Assign project to worker ");
-//        System.out.println("5. View worker and working day ");
-//        System.out.println("6. Delete the worker ");
-//        System.out.println("7. View all worker ");
-//        System.out.println("0. Logout");
-
         System.out.println(ConsoleColors.BROWN_BACKGROUND+ConsoleColors.WHITE_BOLD_BRIGHT+"Welcome to Gram Panchayat Member Home Window : "+ ConsoleColors.RESET);
         System.out.println("Press 1 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" Create worker " + ConsoleColors.RESET);
         System.out.println("Press 2 to"+ConsoleColors.PURPLE_BOLD_BRIGHT +" View GP worker " + ConsoleColors.RESET);
