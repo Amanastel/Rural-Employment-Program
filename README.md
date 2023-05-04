@@ -48,12 +48,12 @@
 # Overview of My work 
 ## ER Diagram
 <p align="center">
-  <img width="800"  src="">
+  <img width="800"  src="/img/ERDiagram.jpg">
 </p>
 
 ## Flow Chart
 <p align="center">
-  <img width="800" src="">
+  <img width="800" src="/img/FlowChart.jpg">
 </p>
 
 # Tech Stack
