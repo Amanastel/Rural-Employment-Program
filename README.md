@@ -55,6 +55,7 @@
 
 ## Flow Chart
 <p align="center">
+
   <img width="800" src="/img/flowchartmanrega.jpg">
 </p>
 
