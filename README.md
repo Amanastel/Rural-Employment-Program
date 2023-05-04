@@ -53,7 +53,7 @@
 
 ## Flow Chart
 <p align="center">
-  <img width="800" src="/img/FlowChart.jpg">
+  <img width="800" src="/img/flowchartmanrega.jpg">
 </p>
 
 # Tech Stack
